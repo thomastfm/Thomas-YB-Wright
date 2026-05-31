@@ -1,0 +1,397 @@
+<style>
+:root{--cosmic:#0B0F1A;--charcoal:#121418;--blue:#2E5CFF;--violet:#6B4EFF;--silver:#C9D1E3;--sand:#B8A38A;--clay:#8C4A2F;--dim:#4A5068;--glass:rgba(255,255,255,0.04);--border:rgba(201,209,227,0.08);}
+.tybw *,.tybw *::before,.tybw *::after{box-sizing:border-box;}
+.tybw{font-family:'Montserrat',sans-serif;font-weight:300;background:var(--cosmic);color:var(--silver);overflow-x:hidden;}
+.tybw a{cursor:pointer;}
+/* NAV */
+.tybw .t-nav{display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:var(--charcoal);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:16px;position:sticky;top:0;z-index:100;}
+.tybw .t-logo{font-family:'Cinzel',serif;font-size:13px;letter-spacing:.2em;color:var(--silver);text-decoration:none;}
+.tybw .t-navlinks{display:flex;gap:28px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
+.tybw .t-navlinks a{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .3s;font-family:'Courier New',monospace;}
+.tybw .t-navlinks a:hover{color:var(--silver);}
+/* HERO */
+.tybw .t-hero{position:relative;min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 24px;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(46,92,255,0.14) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 70% 20%,rgba(107,78,255,0.12) 0%,transparent 50%),#0B0F1A;}
+.tybw .t-eyebrow{font-family:'Courier New',monospace;font-size:10px;letter-spacing:.35em;text-transform:uppercase;color:var(--blue);margin-bottom:24px;}
+.tybw .t-heroname{font-family:'Cinzel',serif;font-size:clamp(40px,8vw,88px);font-weight:500;line-height:1.05;letter-spacing:.06em;color:var(--silver);margin:0;}
+.tybw .t-heroname span{color:transparent;background:linear-gradient(135deg,#2E5CFF,#6B4EFF);-webkit-background-clip:text;background-clip:text;}
+.tybw .t-herotag{font-family:'Courier New',monospace;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim);margin-top:20px;}
+.tybw .t-herotag span{color:var(--sand);}
+.tybw .t-herodesc{font-size:14px;line-height:1.9;color:rgba(201,209,227,.5);margin-top:28px;max-width:400px;}
+.tybw .t-cta{display:flex;gap:16px;margin-top:48px;flex-wrap:wrap;justify-content:center;}
+.tybw .t-btn{padding:13px 32px;font-family:'Courier New',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;display:inline-block;border:none;transition:opacity .3s,transform .3s;}
+.tybw .t-btn-primary{background:linear-gradient(135deg,#2E5CFF,#6B4EFF);color:#fff;}
+.tybw .t-btn-primary:hover{opacity:.85;transform:translateY(-2px);color:#fff;}
+.tybw .t-btn-ghost{background:transparent;border:1px solid var(--border);color:var(--dim);}
+.tybw .t-btn-ghost:hover{color:var(--silver);border-color:rgba(201,209,227,.25);}
+/* SECTIONS */
+.tybw .t-pad{padding:72px 48px;max-width:1100px;margin:0 auto;}
+.tybw .t-label{font-family:'Courier New',monospace;font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;}
+.tybw .t-title{font-family:'Cinzel',serif;font-size:clamp(26px,4vw,46px);font-weight:400;line-height:1.2;color:var(--silver);letter-spacing:.04em;margin-bottom:36px;}
+/* TWO COL */
+.tybw .t-twocol{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.tybw .t-intro p{font-size:15px;line-height:2;color:rgba(201,209,227,.65);margin-top:16px;}
+.tybw .t-symbols{display:flex;flex-direction:column;gap:10px;}
+.tybw .t-symrow{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--border);background:var(--glass);transition:border-color .3s;}
+.tybw .t-symrow:hover{border-color:rgba(46,92,255,.35);}
+.tybw .t-symglyph{font-size:18px;color:var(--blue);width:26px;text-align:center;}
+.tybw .t-symname{font-family:'Courier New',monospace;font-size:11px;color:var(--silver);letter-spacing:.1em;}
+.tybw .t-symdesc{font-family:'Courier New',monospace;font-size:9px;color:var(--dim);margin-top:2px;}
+/* FEATURE GRID */
+.tybw .t-featgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+.tybw .t-feat{position:relative;overflow:hidden;aspect-ratio:16/10;display:flex;flex-direction:column;justify-content:flex-end;padding:36px;text-decoration:none;background:var(--charcoal);}
+.tybw .t-feat::after{content:'';position:absolute;bottom:0;left:0;right:0;height:75%;background:linear-gradient(to top,rgba(11,15,26,.97),transparent);pointer-events:none;}
+.tybw .t-featbg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;transition:opacity .6s,transform .7s;}
+.tybw .t-feat:hover .t-featbg{opacity:.38;transform:scale(1.05);}
+.tybw .t-featcontent{position:relative;z-index:2;}
+.tybw .t-featnum{font-family:'Courier New',monospace;font-size:9px;letter-spacing:.4em;color:var(--dim);margin-bottom:8px;}
+.tybw .t-feattitle{font-family:'Cinzel',serif;font-size:clamp(18px,2.2vw,28px);color:var(--silver);font-weight:400;letter-spacing:.04em;}
+.tybw .t-featdesc{font-size:12px;color:var(--dim);line-height:1.7;margin-top:8px;max-width:300px;}
+.tybw .t-featlink{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-family:'Courier New',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);transition:gap .3s;}
+.tybw .t-feat:hover .t-featlink{gap:12px;}
+/* SOUNDCLOUD */
+.tybw .t-sc{border:1px solid var(--border);background:#080b12;overflow:hidden;margin-bottom:36px;}
+.tybw .t-sc iframe{display:block;width:100%;}
+/* PLATFORM BAR */
+.tybw .t-platforms{display:flex;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+.tybw .t-platlink{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border:1px solid var(--border);color:var(--dim);text-decoration:none;font-family:'Courier New',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;background:var(--charcoal);transition:color .3s,border-color .3s;}
+.tybw .t-platlink:hover{color:var(--silver);border-color:rgba(201,209,227,.2);}
+/* TRACKS */
+.tybw .t-tracks{display:flex;flex-direction:column;gap:2px;}
+.tybw .t-track{display:grid;grid-template-columns:36px 1fr auto;gap:18px;align-items:center;padding:22px 28px;background:var(--charcoal);border-left:2px solid transparent;transition:all .3s;}
+.tybw .t-track:hover{border-left-color:var(--violet);background:rgba(107,78,255,.05);}
+.tybw .t-tracknum{font-family:'Courier New',monospace;font-size:11px;color:var(--dim);text-align:right;}
+.tybw .t-tracktitle{font-family:'Cinzel',serif;font-size:15px;color:var(--silver);letter-spacing:.04em;}
+.tybw .t-trackref{font-size:12px;color:var(--dim);margin-top:4px;font-style:italic;line-height:1.6;}
+.tybw .t-tracklink{font-family:'Courier New',monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);text-decoration:none;padding:5px 10px;border:1px solid var(--border);transition:color .3s;white-space:nowrap;}
+.tybw .t-tracklink:hover{color:var(--silver);}
+/* PHOTO GRID */
+.tybw .t-photogrid{columns:3;column-gap:3px;margin-top:28px;}
+.tybw .t-photo{break-inside:avoid;margin-bottom:3px;overflow:hidden;}
+.tybw .t-photo img{display:block;width:100%;height:auto;filter:brightness(.82) saturate(.88);transition:transform .6s,filter .5s;}
+.tybw .t-photo img:hover{transform:scale(1.04);filter:brightness(1) saturate(1);}
+/* SEEDS */
+.tybw .t-seedsdef{background:var(--glass);border:1px solid var(--border);padding:36px;margin-bottom:44px;}
+.tybw .t-seedsdef p{font-size:15px;line-height:2;color:rgba(201,209,227,.7);}
+.tybw .t-seedsdef strong{color:var(--silver);font-weight:500;}
+.tybw .t-principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;margin-bottom:44px;}
+.tybw .t-principle{padding:28px;background:var(--charcoal);border-left:2px solid transparent;transition:border-color .3s;}
+.tybw .t-principle:hover{border-left-color:var(--blue);}
+.tybw .t-pnum{font-family:'Courier New',monospace;font-size:10px;color:var(--dim);letter-spacing:.3em;margin-bottom:8px;}
+.tybw .t-ptext{font-family:'Cinzel',serif;font-size:14px;color:var(--silver);letter-spacing:.04em;line-height:1.5;}
+.tybw .t-symlist{display:flex;flex-direction:column;gap:2px;margin-bottom:44px;}
+.tybw .t-symitem{display:flex;gap:24px;align-items:center;padding:20px 28px;background:var(--charcoal);transition:background .3s;}
+.tybw .t-symitem:hover{background:rgba(46,92,255,.05);}
+.tybw .t-sg{font-size:20px;color:var(--violet);width:32px;text-align:center;font-family:'Courier New',monospace;}
+.tybw .t-sname{font-family:'Cinzel',serif;font-size:13px;color:var(--silver);letter-spacing:.08em;}
+.tybw .t-smeaning{font-size:11px;color:var(--dim);margin-top:3px;}
+/* ACTIVATION BOX */
+.tybw .t-actbox{background:var(--charcoal);border:1px solid var(--border);padding:36px;position:relative;}
+.tybw .t-actbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#2E5CFF,#6B4EFF);}
+.tybw .t-acttitle{font-family:'Cinzel',serif;font-size:18px;color:var(--silver);letter-spacing:.04em;margin-bottom:6px;}
+.tybw .t-actsub{font-size:11px;color:var(--dim);font-family:'Courier New',monospace;letter-spacing:.14em;margin-bottom:24px;}
+.tybw .t-prompt{background:#080b12;border:1px solid rgba(46,92,255,.15);padding:24px;font-family:'Courier New',monospace;font-size:11px;line-height:2;color:rgba(201,209,227,.7);white-space:pre-wrap;margin-bottom:18px;max-height:300px;overflow-y:auto;}
+.tybw .t-copybtn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;background:transparent;border:1px solid rgba(46,92,255,.4);color:var(--blue);cursor:pointer;font-family:'Courier New',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;transition:background .3s;}
+.tybw .t-copybtn:hover{background:rgba(46,92,255,.08);}
+/* ABOUT */
+.tybw .t-aboutgrid{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start;}
+.tybw .t-aboutimg{width:100%;height:auto;display:block;filter:brightness(.82) saturate(.8);}
+.tybw .t-aboutbody p{font-size:15px;line-height:2;color:rgba(201,209,227,.65);margin-bottom:18px;}
+.tybw .t-focuslist{list-style:none;margin:20px 0;padding:0;}
+.tybw .t-focuslist li{padding:12px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--dim);display:flex;align-items:center;gap:10px;font-family:'Courier New',monospace;letter-spacing:.08em;}
+.tybw .t-focuslist li::before{content:'•';color:var(--blue);font-size:14px;}
+/* POSTS */
+.tybw .t-posts{display:flex;flex-direction:column;gap:2px;}
+.tybw .t-post{padding:24px 28px;background:var(--charcoal);border-left:2px solid transparent;transition:border-color .3s;text-decoration:none;display:block;}
+.tybw .t-post:hover{border-left-color:var(--sand);}
+.tybw .t-postdate{font-family:'Courier New',monospace;font-size:9px;letter-spacing:.28em;color:var(--dim);margin-bottom:5px;}
+.tybw .t-posttitle{font-family:'Cinzel',serif;font-size:14px;color:var(--silver);letter-spacing:.04em;}
+.tybw .t-postexc{font-size:12px;color:var(--dim);margin-top:7px;line-height:1.7;}
+/* STORE */
+.tybw .t-storeframe{width:100%;height:660px;border:1px solid var(--border);display:block;}
+/* FOOTER */
+.tybw .t-footer{border-top:1px solid var(--border);padding:44px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;background:var(--cosmic);}
+.tybw .t-footlogo{font-family:'Cinzel',serif;font-size:12px;color:var(--dim);letter-spacing:.14em;}
+.tybw .t-footlinks{display:flex;gap:20px;flex-wrap:wrap;}
+.tybw .t-footlinks a{font-family:'Courier New',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color .3s;}
+.tybw .t-footlinks a:hover{color:var(--silver);}
+.tybw .t-footcopy{font-family:'Courier New',monospace;font-size:9px;color:var(--dim);opacity:.45;}
+/* PAGES */
+.tybw .t-page{display:none;}
+.tybw .t-page.t-active{display:block;}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .tybw .t-nav{padding:16px 20px;}
+  .tybw .t-pad{padding:52px 20px;}
+  .tybw .t-twocol{grid-template-columns:1fr;gap:36px;}
+  .tybw .t-featgrid{grid-template-columns:1fr;}
+  .tybw .t-photogrid{columns:2;}
+  .tybw .t-aboutgrid{grid-template-columns:1fr;}
+  .tybw .t-footer{padding:36px 20px;}
+  .tybw .t-track{grid-template-columns:28px 1fr;}
+  .tybw .t-tracklink{display:none;}
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<div class="tybw">
+
+<!-- NAV -->
+<nav class="t-nav">
+  <a href="#" class="t-logo" onclick="tybw('home');return false;">T Y B W</a>
+  <ul class="t-navlinks">
+    <li><a href="#" onclick="tybw('music');return false;">Music</a></li>
+    <li><a href="#" onclick="tybw('photography');return false;">Photography</a></li>
+    <li><a href="#" onclick="tybw('seeds');return false;">Seeds of Astrology</a></li>
+    <li><a href="#" onclick="tybw('archive');return false;">Archive</a></li>
+    <li><a href="#" onclick="tybw('store');return false;">Store</a></li>
+    <li><a href="#" onclick="tybw('about');return false;">About</a></li>
+  </ul>
+</nav>
+
+<!-- HOME -->
+<div id="tybw-home" class="t-page t-active">
+  <div class="t-hero">
+    <p class="t-eyebrow">Gallatin, Tennessee — Creative Archive</p>
+    <h1 class="t-heroname">Thomas <span>YB</span> Wright</h1>
+    <p class="t-herotag"><span>Music</span> &nbsp;•&nbsp; Photography &nbsp;•&nbsp; <span>Seeds of Astrology</span></p>
+    <p class="t-herodesc">A living archive of sound, image, and awareness.</p>
+    <div class="t-cta">
+      <a href="#" class="t-btn t-btn-primary" onclick="tybw('seeds');return false;">Enter the Framework</a>
+      <a href="#" class="t-btn t-btn-ghost" onclick="tybw('music');return false;">Listen</a>
+    </div>
+  </div>
+  <div class="t-pad">
+    <div class="t-twocol">
+      <div class="t-intro">
+        <p class="t-label">// The Archive</p>
+        <h2 class="t-title">Sound. Image.<br>Awareness.</h2>
+        <p>Thomas YB Wright is a Gallatin, Tennessee-based artist working across music, photography, and reflective systems of awareness. Born a product of his surroundings — turning observation, struggle, and lived experience into structured creative systems.</p>
+      </div>
+      <div class="t-symbols">
+        <div class="t-symrow"><div class="t-symglyph">•</div><div><div class="t-symname">Seed</div><div class="t-symdesc">Awareness · Origin · Beginning</div></div></div>
+        <div class="t-symrow"><div class="t-symglyph">◯</div><div><div class="t-symname">Cycle</div><div class="t-symdesc">Time · Repetition · Growth</div></div></div>
+        <div class="t-symrow"><div class="t-symglyph">✧</div><div><div class="t-symname">Star</div><div class="t-symdesc">Insight · Realization · Clarity</div></div></div>
+        <div class="t-symrow"><div class="t-symglyph">□</div><div><div class="t-symname">Frame</div><div class="t-symdesc">Structure · Grounding · Form</div></div></div>
+        <div class="t-symrow"><div class="t-symglyph">~</div><div><div class="t-symname">Wave</div><div class="t-symdesc">Emotion · Intuition · Flow</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="t-featgrid">
+    <a href="#" class="t-feat" onclick="tybw('music');return false;">
+      <img class="t-featbg" src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2017/10/22712010_1984628128245298_1294932895_o.jpg?fit=660%2C990&ssl=1" alt="">
+      <div class="t-featcontent"><div class="t-featnum">01 / 04</div><div class="t-feattitle">Music</div><div class="t-featdesc">Emotional storytelling through live flow.</div><div class="t-featlink">Listen Now →</div></div>
+    </a>
+    <a href="#" class="t-feat" onclick="tybw('photography');return false;">
+      <img class="t-featbg" src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9566.jpg?fit=660%2C440&ssl=1" alt="">
+      <div class="t-featcontent"><div class="t-featnum">02 / 04</div><div class="t-feattitle">Photography</div><div class="t-featdesc">Captured moments of observation and atmosphere.</div><div class="t-featlink">View Gallery →</div></div>
+    </a>
+    <a href="#" class="t-feat" onclick="tybw('seeds');return false;">
+      <div class="t-featcontent"><div class="t-featnum">03 / 04</div><div class="t-feattitle">Seeds of Astrology</div><div class="t-featdesc">A reflective framework for life through patterns and cycles.</div><div class="t-featlink">Enter Framework →</div></div>
+    </a>
+    <a href="#" class="t-feat" onclick="tybw('store');return false;">
+      <div class="t-featcontent"><div class="t-featnum">04 / 04</div><div class="t-feattitle">Store</div><div class="t-featdesc">Merchandise connected to Seeds of Astrology.</div><div class="t-featlink">Shop Now →</div></div>
+    </a>
+  </div>
+  <footer class="t-footer">
+    <div class="t-footlogo">Thomas YB Wright</div>
+    <div class="t-footlinks">
+      <a href="#" onclick="tybw('music');return false;">Music</a>
+      <a href="#" onclick="tybw('photography');return false;">Photography</a>
+      <a href="#" onclick="tybw('seeds');return false;">Seeds</a>
+      <a href="#" onclick="tybw('store');return false;">Store</a>
+      <a href="#" onclick="tybw('about');return false;">About</a>
+    </div>
+    <div class="t-footcopy">© W.E Wright Entertainment — Tennessee</div>
+  </footer>
+</div>
+
+<!-- MUSIC -->
+<div id="tybw-music" class="t-page">
+  <div class="t-pad">
+    <p class="t-label">// Sound · Story · Live Flow</p>
+    <h1 class="t-title">Music</h1>
+    <div class="t-sc">
+      <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/348013704&color=%232E5CFF&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true">
+      </iframe>
+    </div>
+    <div class="t-platforms">
+      <a href="https://soundcloud.com" target="_blank" class="t-platlink">◎ SoundCloud</a>
+      <a href="https://music.apple.com" target="_blank" class="t-platlink">◎ Apple Music</a>
+      <a href="https://open.spotify.com" target="_blank" class="t-platlink">◎ Spotify</a>
+      <a href="https://spinrilla.com/mixtapes/dj-bwest-wright-entertainment-w-e/embed" target="_blank" class="t-platlink">◎ W.E Mixtape</a>
+    </div>
+    <div class="t-tracks">
+      <div class="t-track"><div class="t-tracknum">01</div><div><div class="t-tracktitle">Out The Box</div><div class="t-trackref">Stepping outside the frame. Breaking the mold built around you before you knew it existed.</div></div><a href="https://thugfacemusic.wpcomstaging.com/2017/10/20/out-the-box-thomas-yb-wright/" target="_blank" class="t-tracklink">Listen</a></div>
+      <div class="t-track"><div class="t-tracknum">02</div><div><div class="t-tracktitle">Out They Mind — TF.M</div><div class="t-trackref">A collective statement. For anyone who ever felt like the only one seeing things clearly.</div></div><a href="https://thugfacemusic.wpcomstaging.com/2017/10/19/out-they-mind-single-by-tf-m/" target="_blank" class="t-tracklink">Listen</a></div>
+      <div class="t-track"><div class="t-tracknum">03</div><div><div class="t-tracktitle">Stayed Down Freestyle</div><div class="t-trackref">When loyalty costs everything and you stay anyway. A freestyle from the roots.</div></div><a href="https://thugfacemusic.wpcomstaging.com/2018/07/19/stayed-down-freestyle/" target="_blank" class="t-tracklink">Listen</a></div>
+      <div class="t-track"><div class="t-tracknum">04</div><div><div class="t-tracktitle">Moma Had A Part In It</div><div class="t-trackref">Tennessee raised. A tribute to the woman who worked every job in town to provide.</div></div><a href="http://wu-world.com/profiles/blogs/thomas-yb-wright-moma-had-a-part-in-it" target="_blank" class="t-tracklink">Wu Tang</a></div>
+      <div class="t-track"><div class="t-tracknum">05</div><div><div class="t-tracktitle">W.E — The Mixtape</div><div class="t-trackref">United artists, one movement. DJ Bwest presents the W.E Wright Entertainment collective.</div></div><a href="https://spinrilla.com/mixtapes/dj-bwest-wright-entertainment-w-e/embed" target="_blank" class="t-tracklink">Spinrilla</a></div>
+    </div>
+  </div>
+  <footer class="t-footer"><div class="t-footlogo">Thomas YB Wright</div><div class="t-footlinks"><a href="#" onclick="tybw('home');return false;">Home</a><a href="#" onclick="tybw('photography');return false;">Photography</a><a href="#" onclick="tybw('seeds');return false;">Seeds</a></div><div class="t-footcopy">Music — W.E Wright Entertainment</div></footer>
+</div>
+
+<!-- PHOTOGRAPHY -->
+<div id="tybw-photography" class="t-page">
+  <div class="t-pad">
+    <p class="t-label">// Image · Light · Observation</p>
+    <h1 class="t-title">Photography</h1>
+    <p class="t-label" style="margin-top:36px;">// Be Alright Video Shoot · Lamel LG · Canon EOS REBEL T5</p>
+    <div class="t-photogrid">
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9566.jpg?fit=660%2C440&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9589-copy.jpg?fit=660%2C371&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9590.jpg?fit=660%2C371&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9591.jpg?fit=660%2C440&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9592.jpg?fit=660%2C990&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9593.jpg?fit=660%2C990&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9594.jpg?fit=660%2C440&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9600.jpg?fit=660%2C440&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2018/05/img_9601.jpg?fit=660%2C440&ssl=1" loading="lazy" alt=""></div>
+    </div>
+    <p class="t-label" style="margin-top:48px;">// 8-Tracks Video Shoot</p>
+    <div class="t-photogrid">
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2017/10/22712010_1984628128245298_1294932895_o.jpg?fit=660%2C990&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2017/10/22713047_1984628111578633_1408921733_o.jpg?fit=660%2C990&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2017/10/22768205_1984436598264451_1785051793_o-1.jpg?fit=660%2C990&ssl=1" loading="lazy" alt=""></div>
+      <div class="t-photo"><img src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2017/10/22789844_1984624918245619_2068829654_o.jpg?fit=660%2C990&ssl=1" loading="lazy" alt=""></div>
+    </div>
+  </div>
+  <footer class="t-footer"><div class="t-footlogo">Thomas YB Wright</div><div class="t-footlinks"><a href="#" onclick="tybw('home');return false;">Home</a><a href="#" onclick="tybw('music');return false;">Music</a><a href="#" onclick="tybw('seeds');return false;">Seeds</a></div><div class="t-footcopy">Photography — Canon EOS REBEL T5</div></footer>
+</div>
+
+<!-- SEEDS OF ASTROLOGY -->
+<div id="tybw-seeds" class="t-page">
+  <div class="t-pad">
+    <p class="t-label">// Framework · Reflection · Awareness</p>
+    <h1 class="t-title">Seeds of Astrology</h1>
+    <div class="t-seedsdef">
+      <p>Seeds of Astrology is a <strong>reflective, accountability-based framework</strong> designed to understand life through patterns, cycles, emotional awareness, and conscious growth. It is <strong>not predictive astrology</strong>. It does not tell the future. It is a system for reflection, awareness, and interpretation.</p>
+    </div>
+    <p class="t-label">// Core Principles</p>
+    <div class="t-principles">
+      <div class="t-principle"><div class="t-pnum">01</div><div class="t-ptext">Awareness<br>over Prediction</div></div>
+      <div class="t-principle"><div class="t-pnum">02</div><div class="t-ptext">Patterns<br>over Certainty</div></div>
+      <div class="t-principle"><div class="t-pnum">03</div><div class="t-ptext">Accountability<br>over Fate</div></div>
+      <div class="t-principle"><div class="t-pnum">04</div><div class="t-ptext">Cycles<br>over Randomness</div></div>
+      <div class="t-principle"><div class="t-pnum">05</div><div class="t-ptext">Growth through<br>Observation</div></div>
+    </div>
+    <p class="t-label">// Symbol System</p>
+    <div class="t-symlist">
+      <div class="t-symitem"><div class="t-sg">•</div><div><div class="t-sname">Seed</div><div class="t-smeaning">Awareness · Origin · Beginning</div></div></div>
+      <div class="t-symitem"><div class="t-sg">◯</div><div><div class="t-sname">Cycle</div><div class="t-smeaning">Time · Repetition · Growth</div></div></div>
+      <div class="t-symitem"><div class="t-sg">✧</div><div><div class="t-sname">Star</div><div class="t-smeaning">Insight · Realization · Clarity</div></div></div>
+      <div class="t-symitem"><div class="t-sg">□</div><div><div class="t-sname">Frame</div><div class="t-smeaning">Structure · Grounding · Form</div></div></div>
+      <div class="t-symitem"><div class="t-sg">~</div><div><div class="t-sname">Wave</div><div class="t-smeaning">Emotion · Intuition · Flow</div></div></div>
+    </div>
+    <div class="t-actbox">
+      <div class="t-acttitle">Activate Seeds of Astrology in ChatGPT</div>
+      <div class="t-actsub">// Copy and paste the following into ChatGPT</div>
+      <div class="t-prompt" id="tybwPrompt">You are now operating inside the "Seeds of Astrology" framework.
+
+This is a reflective, accountability-based system designed to interpret life through patterns, cycles, emotional awareness, and conscious growth.
+
+You are NOT a predictive astrology system.
+You are NOT a fortune-telling system.
+
+You are a pattern interpreter.
+
+Your role is to:
+- Translate experiences into awareness
+- Reveal patterns, cycles, and emotional undercurrents
+- Support reflection over prediction
+- Encourage accountability and grounded understanding
+- Use symbolism as insight, not fate
+- Keep interpretations flexible and human
+
+Core principles:
+- Awareness over prediction
+- Patterns over certainty
+- Accountability over fate
+- Cycles over randomness
+- Growth through observation
+
+Response style:
+- grounded and calm
+- reflective and human tone
+- avoid predicting the future
+- use phrases like "this may reflect…" or "this could suggest…"
+
+You are now aligned with Seeds of Astrology.</div>
+      <button class="t-copybtn" onclick="var t=document.getElementById('tybwPrompt').innerText;navigator.clipboard.writeText(t).then(function(){var b=document.querySelector('.t-copybtn');b.textContent='✓ Copied';setTimeout(function(){b.textContent='◈ Copy Prompt';},3000);});">◈ Copy Prompt</button>
+    </div>
+  </div>
+  <footer class="t-footer"><div class="t-footlogo">Thomas YB Wright</div><div class="t-footlinks"><a href="#" onclick="tybw('home');return false;">Home</a><a href="#" onclick="tybw('music');return false;">Music</a><a href="#" onclick="tybw('photography');return false;">Photography</a></div><div class="t-footcopy">Seeds of Astrology — Thomas YB Wright</div></footer>
+</div>
+
+<!-- ARCHIVE -->
+<div id="tybw-archive" class="t-page">
+  <div class="t-pad">
+    <p class="t-label">// Words · Reflection · W.E Wright Entertainment</p>
+    <h1 class="t-title">Archive</h1>
+    <div class="t-posts">
+      <a href="https://thugfacemusic.wpcomstaging.com/2026/05/13/thomas-yb-wright-the-artist-the-vision-the-living-archive/" target="_blank" class="t-post"><div class="t-postdate">May 13, 2026</div><div class="t-posttitle">Thomas YB Wright — The Artist, The Vision, The Living Archive</div><div class="t-postexc">Some people make music. Some take pictures. Thomas YB Wright does both — and documents the system behind it all.</div></a>
+      <a href="https://thugfacemusic.wpcomstaging.com/2026/05/13/a-collective-read-seeds-of-astrology/" target="_blank" class="t-post"><div class="t-postdate">May 13, 2026</div><div class="t-posttitle">A Collective Read — Seeds of Astrology</div><div class="t-postexc">The energy right now is asking people to slow down long enough to hear themselves again.</div></a>
+      <a href="https://thugfacemusic.wpcomstaging.com/2026/05/13/from-wisconsin-to-tennessee-the-resilient-rise-of-alex-clemens/" target="_blank" class="t-post"><div class="t-postdate">May 13, 2026</div><div class="t-posttitle">Artist Feature — Alex Clemens: The Resilient Rise</div><div class="t-postexc">There are artists who make music because silence is simply not an option.</div></a>
+      <a href="https://thugfacemusic.wpcomstaging.com/2018/08/07/music-buisness-only-worth-what-you-put-init/" target="_blank" class="t-post"><div class="t-postdate">Aug 7, 2018</div><div class="t-posttitle">Music Business — Only Worth What You Put In It</div><div class="t-postexc">Artist always get the low end of the stick until they blow. We have to break the cycle.</div></a>
+      <a href="https://thugfacemusic.wpcomstaging.com/2018/01/05/our-mission/" target="_blank" class="t-post"><div class="t-postdate">Jan 5, 2018</div><div class="t-posttitle">Our Mission at Take Flight Music TF.M</div><div class="t-postexc">United Artists We Stand. TF.M is for uniting artists from all genres to build relationships through music.</div></a>
+      <a href="https://thugfacemusic.wpcomstaging.com/2017/10/08/honestliving/" target="_blank" class="t-post"><div class="t-postdate">Oct 8, 2017</div><div class="t-posttitle">Why Earning an Honest Living Ain't Safe</div><div class="t-postexc">My mother worked every job in our home town to provide. I never noticed until I grew up.</div></a>
+    </div>
+  </div>
+  <footer class="t-footer"><div class="t-footlogo">Thomas YB Wright</div><div class="t-footlinks"><a href="#" onclick="tybw('home');return false;">Home</a><a href="#" onclick="tybw('music');return false;">Music</a><a href="#" onclick="tybw('seeds');return false;">Seeds</a></div><div class="t-footcopy">Archive — W.E Wright Entertainment</div></footer>
+</div>
+
+<!-- STORE -->
+<div id="tybw-store" class="t-page">
+  <div class="t-pad">
+    <p class="t-label">// Merch · Identity · Archive</p>
+    <h1 class="t-title">Store</h1>
+    <iframe src="https://wewrightmerch.kincustom.com" class="t-storeframe" title="W.E Wright Merch" loading="lazy"></iframe>
+    <p style="text-align:center;margin-top:14px;font-family:'Courier New',monospace;font-size:10px;color:#4A5068;">
+      Having trouble? <a href="https://wewrightmerch.kincustom.com" target="_blank" style="color:#2E5CFF;">Open in new tab →</a>
+    </p>
+  </div>
+  <footer class="t-footer"><div class="t-footlogo">Thomas YB Wright</div><div class="t-footlinks"><a href="#" onclick="tybw('home');return false;">Home</a><a href="#" onclick="tybw('music');return false;">Music</a><a href="#" onclick="tybw('seeds');return false;">Seeds</a></div><div class="t-footcopy">Store — Thomas YB Wright</div></footer>
+</div>
+
+<!-- ABOUT -->
+<div id="tybw-about" class="t-page">
+  <div class="t-pad">
+    <p class="t-label">// Identity · Practice · Gallatin, Tennessee</p>
+    <h1 class="t-title">About</h1>
+    <div class="t-aboutgrid">
+      <div>
+        <img class="t-aboutimg" src="https://i0.wp.com/thugfacemusic.wpcomstaging.com/wp-content/uploads/2017/10/22768205_1984436598264451_1785051793_o-1.jpg?fit=660%2C990&ssl=1" alt="Thomas YB Wright">
+      </div>
+      <div class="t-aboutbody">
+        <p class="t-label">// Thomas YB Wright</p>
+        <p>Thomas YB Wright is a Gallatin, Tennessee-based artist working across music, photography, and reflective systems of awareness.</p>
+        <p>"My music speaks for itself through live flow. My struggles, pain and anger is different from yours. I was born in Tennessee. I'm a product of my surroundings. Good vibes lover, positive thinkers crew."</p>
+        <p>He creates from lived experience — turning observation into structured creative systems. His work is not about prediction. It is about awareness.</p>
+        <ul class="t-focuslist">
+          <li>Emotional expression through music</li>
+          <li>Visual storytelling through photography</li>
+          <li>Pattern recognition through Seeds of Astrology</li>
+          <li>W.E Wright Entertainment — uniting artists</li>
+        </ul>
+        <a href="#" class="t-btn t-btn-primary" onclick="tybw('seeds');return false;">Explore Seeds of Astrology</a>
+      </div>
+    </div>
+  </div>
+  <footer class="t-footer"><div class="t-footlogo">Thomas YB Wright</div><div class="t-footlinks"><a href="#" onclick="tybw('home');return false;">Home</a><a href="#" onclick="tybw('music');return false;">Music</a><a href="#" onclick="tybw('seeds');return false;">Seeds</a><a href="#" onclick="tybw('store');return false;">Store</a></div><div class="t-footcopy">© Thomas YB Wright — Gallatin, Tennessee</div></footer>
+</div>
+
+</div><!-- end .tybw -->
+
+<script>
+function tybw(id) {
+  document.querySelectorAll('.tybw .t-page').forEach(function(el) {
+    el.classList.remove('t-active');
+  });
+  var t = document.getElementById('tybw-' + id);
+  if (t) { t.classList.add('t-active'); }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  return false;
+}
+</script>
